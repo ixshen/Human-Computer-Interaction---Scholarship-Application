@@ -21,7 +21,16 @@ export interface UserApplication {
   appliedDate: string;
 }
 
-export type AppView = 'home' | 'applications' | 'profile' | 'details' | 'ai-search' | 'saved';
+export interface AppNotification {
+  id: string;
+  title: string;
+  message: string;
+  type: 'deadline' | 'match' | 'status' | 'info';
+  timestamp: string;
+  isRead: boolean;
+}
+
+export type AppView = 'home' | 'applications' | 'profile' | 'details' | 'ai-search' | 'saved' | 'notifications';
 
 export interface FilterState {
   fieldOfStudy: string;

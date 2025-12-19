@@ -1,5 +1,5 @@
 
-import { Scholarship } from './types';
+import { Scholarship, AppNotification } from './types';
 
 export const MOCK_SCHOLARSHIPS: Scholarship[] = [
   {
@@ -20,7 +20,7 @@ export const MOCK_SCHOLARSHIPS: Scholarship[] = [
     id: '2',
     title: 'Global Business Leaders Grant',
     tags: ['Business', 'Master'],
-    isBookmarked: true,
+    isBookmarked: false,
     category: 'Business',
     level: 'Master',
     description: 'A grant for exceptional students pursuing postgraduate studies in business administration and international management.',
@@ -144,17 +144,52 @@ export const MOCK_SCHOLARSHIPS: Scholarship[] = [
   },
   {
     id: '11',
-    title: 'National Engineering Excellence Foundation',
-    tags: ['Engineering', 'Foundation', 'Local-U'],
+    title: 'National Engineering Foundation Sponsorship',
+    tags: ['Engineering', 'Foundation', 'Local'],
     isBookmarked: false,
     category: 'Engineering',
     level: 'Foundation',
-    description: 'A comprehensive scholarship for high-achieving foundation students pursuing engineering in local public universities.',
-    amount: 'RM 12,000',
-    deadline: '2026-03-31',
+    description: 'A full sponsorship program for promising local students intending to pursue engineering degrees at public universities, starting from their foundation year.',
+    amount: '$6,000',
+    deadline: '2026-08-15',
     institutionType: 'Public-U',
     fundType: 'Sponsorship',
     status: 'OPEN'
+  }
+];
+
+export const MOCK_NOTIFICATIONS: AppNotification[] = [
+  {
+    id: 'n1',
+    title: 'Deadline Approaching',
+    message: 'The "Future Innovators Scholarship" closes in 2 days. Complete your application now!',
+    type: 'deadline',
+    timestamp: '2 hours ago',
+    isRead: false
+  },
+  {
+    id: 'n2',
+    title: 'New Match Found',
+    message: 'We found a new PhD grant in Medicine that matches your profile.',
+    type: 'match',
+    timestamp: '5 hours ago',
+    isRead: false
+  },
+  {
+    id: 'n3',
+    title: 'Application Status',
+    message: 'Your application for "Digital Accounting" has been moved to "Under Review".',
+    type: 'status',
+    timestamp: '1 day ago',
+    isRead: true
+  },
+  {
+    id: 'n4',
+    title: 'Profile Tip',
+    message: 'Upload your latest transcript to improve your recommendation accuracy.',
+    type: 'info',
+    timestamp: '2 days ago',
+    isRead: true
   }
 ];
 
