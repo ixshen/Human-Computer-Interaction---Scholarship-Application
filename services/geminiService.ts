@@ -2,7 +2,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Scholarship } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+// Always use process.env.API_KEY directly as per coding guidelines
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function getSmartRecommendations(query: string, allScholarships: Scholarship[]): Promise<string[]> {
   try {
@@ -45,6 +46,7 @@ export async function getScholarshipSummary(scholarship: Scholarship): Promise<s
       Description: ${scholarship.description}
       Tags: ${scholarship.tags.join(', ')}`,
     });
+    // Access the text property directly without calling it as a method
     return response.text.trim();
   } catch (error) {
     return "No summary available.";

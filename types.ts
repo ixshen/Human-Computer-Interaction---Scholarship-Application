@@ -30,11 +30,17 @@ export interface AppNotification {
   isRead: boolean;
 }
 
-export type AppView = 'home' | 'applications' | 'profile' | 'details' | 'ai-search' | 'saved' | 'notifications';
+export type AppView = 'home' | 'applications' | 'profile' | 'details' | 'ai-search' | 'saved' | 'notifications' | 'eligibility';
 
 export interface FilterState {
   fieldOfStudy: string;
   level: string;
   institutionType: string;
   fundType: string;
+}
+
+export interface EligibilityState {
+  cgpa: string;
+  household: 'B40' | 'M40' | 'T20' | null;
+  score: number;
 }
